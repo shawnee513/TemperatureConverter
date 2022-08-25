@@ -6,15 +6,13 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.material.Button
-import androidx.compose.material.TextField
+import androidx.compose.material.*
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 
@@ -23,7 +21,11 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MainActivityContent()
+            MaterialTheme {
+                Surface {
+                    MainActivityContent()
+                }
+            }
         }
     }
 }
@@ -91,7 +93,11 @@ fun MainActivityContent() {
 @Preview(showBackground = true)
 @Composable
 fun PreviewMainActivity() {
-    MainActivityContent()
+    MaterialTheme {
+        Surface {
+            MainActivityContent()
+        }
+    }
 }
 
 
